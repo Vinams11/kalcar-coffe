@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+:root {
+    --background: #f3ede9;
+    --text: #160e08;
+    --primary: #e4ad83;
+    --secondary: #8e450e;
+    --accent: #ff8124;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.vina-logo {
+    color: var(--text);
+    font-family: "Merienda", cursive;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a:hover {
+    /* color: var(--accent); */
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    animation: slide-in 0.3s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.vina-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--secondary);
+    color: var(--background);
+    background-image: url('images/coffee-background.jpg'); /* Tambahkan gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.vina-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.vina-hero-content {
+    z-index: 1;
+    /* max-width: 500px; */
+}
+
+.vina-hero h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.vina-hero p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--background);
+}
+
+.vina-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: var(--background);
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.vina-cta:hover {
+    background-color: var(--primary);
+}
+
+.vina-hero-image img {
+    max-width: 500px;
+    z-index: 1;
+    border-radius: 20px 0 0 20px;
+    border: 5px solid var(--background);
+}
+
+/* Section Tentang Kami */
+.vina-about {
+    background-color: var(--background);
+    color: var(--text);
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vina-about-title {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.vina-about-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.vina-about-title:hover::after {
+    width: 80px;
+}
+
+.vina-about-description {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.vina-about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.vina-about-vision, .vina-about-mission {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.vina-about-vision h2, .vina-about-mission h2 {
+    font-size: 1.8rem;
+    color: var(--text);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.vina-about-mission ul {
+    padding-left: 20px;
+    color: var(--secondary);
+}
+
+.vina-about-mission li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Section Gallery */
+.vina-gallery {
+    background-color: var(--background);
+    color: var(--text);
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vina-gallery-title {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.vina-gallery-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.vina-gallery-title:hover::after {
+    width: 80px;
+}
+
+.vina-gallery-description {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 40px;
+}
+
+/* Grid Gambar */
+.vina-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.vina-gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.vina-gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    padding: 0.5rem;
+    background-color: var(--primary);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    /* color: var(--background); */
+}
+
+/* Menu Page */
+.vina-menu {
+    /* background-color: #f9f9f9; */
+    color: #333;
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vina-menu-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    justify-content: center;
+    /* background-color: var(--primary); */
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+
+.vina-menu-header a {
+    color: var(--secondary);
+    position: absolute;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    left: 0;
+    top: 25%;
+    font-weight: 700;
+    font-size: 2rem;
+    transform: translateX(5px);
+}
+
+.vina-menu-header a:hover {
+    color: var(--accent);
+    transform: translateX(0px);
+}
+
+.vina-menu-category {
+    margin-bottom: 40px;
+}
+
+.vina-menu-category-title {
+    font-size: 1.8rem;
+    color: #666;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.vina-menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vina-menu-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vina-menu-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.vina-menu-item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vina-menu-item-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.vina-menu-item-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.vina-menu-item-price {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.vina-menu-item-button {
+    /* display: inline-block; */
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: semibold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.vina-menu-item-button:hover {
+    background-color: var(--secondary);
+}
+
+/* Contact Page */
+.vina-contact {
+    background-color: var(--background);
+    color: var(--text);
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Judul Kontak */
+.vina-contact-title {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.vina-contact-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.vina-contact-title:hover::after {
+    width: 80px;
+}
+
+.vina-contact-description {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 40px;
+}
+
+.vina-contact-container {
+    margin-bottom: 40px;
+    /* text-align: left; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.vina-contact-link {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: var(--text);
+    gap: 20px;
+}
+
+.vina-contact-link:hover {
+    transform: translateY(-5px);
+}
+
+.vina-contact-link img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Peta Lokasi */
+.vina-contact-map {
+    margin-top: 40px;
+}
+
+.vina-contact-map-title {
+    font-size: 1.8rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.vina-contact-map-container {
+    /* padding: 14px; */
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vina-contact-map-container iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsif untuk Ponsel */
+@media (max-width: 600px) {
+    .vina-contact {
+        padding: 40px 15px;
+    }
+
+    .vina-contact-title {
+        font-size: 2rem;
+    }
+
+    .vina-contact-description {
+        font-size: 1rem;
+    }
+}
+
+/* Review Page */
+/* Section Ulasan */
+.vina-reviews {
+    background-color: var(--background);
+    color: var(--text);
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vina-reviews-title {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.vina-reviews-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.vina-reviews-title:hover::after {
+    width: 80px;
+}
+
+.vina-review-form {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.vina-review-form-title {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.vina-review-form input,
+.vina-review-form select,
+.vina-review-form textarea,
+.vina-review-form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vina-review-form textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.vina-review-form button {
+    background-color: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vina-review-form button:hover {
+    background-color: var(--secondary);
+}
+
+.vina-reviews-description {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* Daftar dan Item Ulasan */
+.vina-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vina-review-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vina-review-item:hover {
+    transform: translateY(-5px);
+}
+
+.vina-review-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.vina-review-content {
+    text-align: left;
+}
+
+.vina-review-name {
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 600;
+    margin: 0;
+}
+
+.vina-review-rating {
+    color: var(--accent);
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.vina-review-text {
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        /* flex-direction: column; */
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav {
+        /* flex-direction: column; */
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .vina-logo {
+        font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .vina-hero {
+        flex-direction: column;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .vina-hero h2 {
+        font-size: 2rem;
+    }
+
+    .vina-hero p {
+        font-size: 1rem;
+    }
+
+    .vina-hero-image img {
+        max-width: 300px;
+        margin: 20px auto;
+    }
+
+    /* Menu Items */
+    .vina-menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vina-menu-item {
+        width: 90%;
+    }
+
+    /* Section Tentang Kami */
+    .vina-about-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Kontak */
+    .vina-contact {
+        padding: 40px 15px;
+    }
+
+    .vina-contact-title {
+        font-size: 2rem;
+    }
+
+    .vina-contact-description,
+    .vina-review-text {
+        font-size: 1rem;
+    }
+}
+
+/* Untuk layar ponsel (maksimal 480px) */
+@media (max-width: 480px) {
+    /* Header */
+    header {
+        padding: 0.5rem;
+    }
+
+    .vina-logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .vina-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .vina-hero p {
+        font-size: 0.9rem;
+    }
+
+    .vina-hero-image img {
+        max-width: 250px;
+    }
+
+    /* Menu */
+    .vina-menu-title {
+        font-size: 1.8rem;
+    }
+
+    .vina-menu-item {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Tentang Kami */
+    .vina-about-title {
+        font-size: 2rem;
+    }
+
+    .vina-about-description {
+        font-size: 1rem;
+    }
+
+    /* Kontak & Ulasan */
+    .vina-contact-container{
+        flex-direction: column;
+    }
+    .vina-contact-link {
+        max-width: 400px;
+        width: 70%;
+        justify-content: space-center;
+    }
+    .vina-contact-title,
+    .vina-reviews-title {
+        font-size: 1.8rem;
+    }
+
+    .vina-contact-description,
+    .vina-review-text {
+        font-size: 0.9rem;
+    }
+}
